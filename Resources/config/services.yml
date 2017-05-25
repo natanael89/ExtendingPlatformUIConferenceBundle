@@ -8,3 +8,9 @@ services:
         arguments: ["@ezpublish.api.service.content_type"]
         tags:
             - { name: form.type }
+
+    ez_systems_extending_platform_uiconference.twig.list_extension:
+        class: EzSystems\ExtendingPlatformUIConferenceBundle\Twig\ListExtension
+        arguments: ['@ezpublish.api.service.content_type']
+        tags:
+            - { name: twig.extension }

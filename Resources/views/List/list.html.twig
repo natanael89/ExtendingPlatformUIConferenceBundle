@@ -16,7 +16,7 @@
         {{ form_end(form) }}
     </div>
 
-    <h2>{{ results.totalCount }} content items</h2>
+    <h2>{{ results.totalCount }} content items{% if contentType %} of type "{{ contentType.names['eng-GB'] }}"{% endif %}</h2>
 
     {{ include('EzSystemsExtendingPlatformUIConferenceBundle:List:list_pagination.html.twig') }}
 
@@ -25,6 +25,7 @@
             <thead>
             <tr>
                 <th>Name</th>
+                <th>Content type</th>
                 <th>Modified</th>
                 <th>Published</th>
             </tr>
@@ -39,6 +40,7 @@
                            data-route-languageCode="{{ value.valueObject.contentInfo.mainLanguageCode }}"
                         >{{ value.valueObject.contentInfo.name }}</a>
                     </td>
+                    <td>{{ getContentTypeName(value.valueObject.contentInfo.contentTypeId) }}</td>
                     <td>{{ value.valueObject.contentInfo.modificationDate|localizeddate( 'short', 'medium' ) }}</td>
                     <td>{{ value.valueObject.contentInfo.publishedDate|localizeddate( 'short', 'medium' ) }}</td>
                 </tr>
