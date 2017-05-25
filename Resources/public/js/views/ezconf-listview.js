@@ -5,11 +5,28 @@ YUI.add('ezconf-listview', function (Y) {
         events: {
             '.ezconf-list-location': {
                 'tap': '_navigateToLocation'
+            },
+            '.ezconf-list-page-link': {
+                'tap': '_navigateToOffset'
             }
         },
 
         initializer: function () {
             this.containerTemplate = '<div class="ez-view-ezconflistview"/>';
+        },
+
+        _navigateToOffset: function (e) {
+            var offset = e.target.getData('offset');
+
+            e.preventDefault();
+            this.fire('navigateTo', {
+                route: {
+                    name: 'eZConfListOffset',
+                    params: {
+                        offset: offset
+                    }
+                }
+            });
         },
 
         _navigateToLocation: function (e) {
