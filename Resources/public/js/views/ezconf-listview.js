@@ -8,10 +8,6 @@ YUI.add('ezconf-listview', function (Y) {
                     "name": "listView"
                 })
             );
-            this.get('container').setStyles({
-                background: '#fff',
-                fontSize: '200%'
-            });
             return this;
         }
     });

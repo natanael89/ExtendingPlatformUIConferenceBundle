@@ -1,0 +1,10 @@
+.ez-view-ezconflistview {
+    background: #fff;
+    padding: 1em 2em;
+}
+
+.ez-view-ezconflistview .ezconf-list-title {
+    margin-top: 0;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #ccc;
+}
