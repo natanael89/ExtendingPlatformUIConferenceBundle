@@ -5,11 +5,14 @@ YUI.add('ezconf-listapplugin', function (Y) {
         initializer: function () {
             var app = this.get('host');
 
+            app.views.ezconfListView = {
+                type: Y.eZConf.ListView
+            };
+
             app.route({
                 name: "eZConfList",
                 path: "/ezconf/list",
-                view: "dashboardView",
-                service: Y.eZ.DashboardBlocksViewService,
+                view: "ezconfListView",
                 sideViews: {'navigationHub': true, 'discoveryBar': false},
                 callbacks: ['open', 'checkUser', 'handleSideViews', 'handleMainView']
             });

@@ -4,7 +4,7 @@ system:
             modules:
                 ezconf-listapplugin:
                     dependencyOf: ['ez-platformuiapp']
-                    requires: ['ez-pluginregistry', 'plugin', 'base']
+                    requires: ['ez-pluginregistry', 'plugin', 'base', 'ezconf-listview']
                     path: "%extending_platformui.public_dir%/js/apps/plugins/ezconf-listappplugin.js"
                 ezconf-listview:
                     requires: ['ez-view']
