@@ -7,5 +7,8 @@ system:
                     requires: ['ez-pluginregistry', 'plugin', 'base', 'ezconf-listview']
                     path: "%extending_platformui.public_dir%/js/apps/plugins/ezconf-listappplugin.js"
                 ezconf-listview:
-                    requires: ['ez-view']
+                    requires: ['ez-templatebasedview', 'ezconflistview-ez-template']
                     path: "%extending_platformui.public_dir%/js/views/ezconf-listview.js"
+                ezconflistview-ez-template:
+                    type: 'template'
+                    path: "%extending_platformui.public_dir%/templates/ezconflistview.hbt"
