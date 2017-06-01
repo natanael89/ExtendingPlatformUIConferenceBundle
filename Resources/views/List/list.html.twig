@@ -5,6 +5,17 @@
 {% endblock %}
 
 {% block content %}
+    <div class="ezconf-list-toolbar">
+        {{ form_start(form) }}
+            <fieldset class="">
+                <legend class="ezconf-list-toolbar-legend">Filter by Content Type</legend>
+                <div class="pure-form">
+                    {{ form_row(form.typesList) }}
+                </div>
+            </fieldset>
+        {{ form_end(form) }}
+    </div>
+
     <h2>{{ results.totalCount }} content items</h2>
 
     {{ include('EzSystemsExtendingPlatformUIConferenceBundle:List:list_pagination.html.twig') }}

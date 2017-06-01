@@ -2,3 +2,9 @@ services:
     ez_systems_extending_platform_uiconference.service.content_searcher:
         class: EzSystems\ExtendingPlatformUIConferenceBundle\Service\ContentSearcher
         arguments: ["@ezpublish.api.service.search"]
+
+    ez_systems_extending_platform_uiconference.form.content_list_filter_type:
+        class: EzSystems\ExtendingPlatformUIConferenceBundle\Form\ContentListFilterType
+        arguments: ["@ezpublish.api.service.content_type"]
+        tags:
+            - { name: form.type }

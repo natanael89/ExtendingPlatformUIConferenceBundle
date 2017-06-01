@@ -2,6 +2,7 @@
 
 namespace EzSystems\ExtendingPlatformUIConferenceBundle\Controller;
 
+use EzSystems\ExtendingPlatformUIConferenceBundle\Form\ContentListFilterType;
 use EzSystems\PlatformUIBundle\Controller\Controller as BaseController;
 
 class ListController extends BaseController
@@ -14,11 +15,15 @@ class ListController extends BaseController
         $previousIndex = $contentSearcher->calculatePreviousIndex();
         $nextIndex = $contentSearcher->calculateNextIndex($results->totalCount);
 
+        $form = $this->createForm(ContentListFilterType::class);
+        $form->get('typesList')->setData($typeIdentifier);
+
         return $this->render('EzSystemsExtendingPlatformUIConferenceBundle:List:list.html.twig', [
             'typeIdentifier' => $typeIdentifier,
             'results' => $results,
             'previous' => $previousIndex,
-            'next' => $nextIndex
+            'next' => $nextIndex,
+            'form' => $form->createView()
         ]);
     }
 }
