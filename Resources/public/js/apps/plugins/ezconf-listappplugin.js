@@ -26,6 +26,15 @@ YUI.add('ezconf-listapplugin', function (Y) {
                 sideViews: {'navigationHub': true, 'discoveryBar': false},
                 callbacks: ['open', 'checkUser', 'handleSideViews', 'handleMainView']
             });
+
+            app.route({
+                name: "eZConfListOffsetTypeIdentifier",
+                path: "/ezconf/list/:offset/:typeIdentifier",
+                view: "ezconfListView",
+                service: Y.eZConf.ListViewService,
+                sideViews: {'navigationHub': true, 'discoveryBar': false},
+                callbacks: ['open', 'checkUser', 'handleSideViews', 'handleMainView']
+            });
         }
     }, {
         NS: 'ezconfTypeApp'
