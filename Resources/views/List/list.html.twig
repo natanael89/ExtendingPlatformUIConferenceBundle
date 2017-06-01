@@ -10,7 +10,7 @@
             <fieldset class="">
                 <legend class="ezconf-list-toolbar-legend">Filter by Content Type</legend>
                 <div class="pure-form">
-                    {{ form_row(form.typesList) }}
+                    {{ form_row(form.typesList, {'attr': {'class': 'ezconf-list-types'} }) }}
                 </div>
             </fieldset>
         {{ form_end(form) }}

@@ -8,11 +8,28 @@ YUI.add('ezconf-listview', function (Y) {
             },
             '.ezconf-list-page-link': {
                 'tap': '_navigateToOffset'
+            },
+            '.ezconf-list-types': {
+                'change': '_filterByType'
             }
         },
 
         initializer: function () {
             this.containerTemplate = '<div class="ez-view-ezconflistview"/>';
+        },
+
+        _filterByType: function (e) {
+            var select = e.target;
+
+            this.fire('navigateTo', {
+                route: {
+                    name: 'eZConfListOffsetTypeIdentifier',
+                    params: {
+                        offset: "0",
+                        typeIdentifier: select.get('value')
+                    }
+                }
+            });
         },
 
         _navigateToOffset: function (e) {
