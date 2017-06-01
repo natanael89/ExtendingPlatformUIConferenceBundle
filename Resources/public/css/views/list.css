@@ -3,8 +3,17 @@
     padding: 1em 2em;
 }
 
+.ez-view-ezconflistview .ez-page-header {
+    padding: 0;
+}
+
 .ez-view-ezconflistview .ezconf-list-title {
     margin-top: 0;
     padding-bottom: 3px;
     border-bottom: 1px solid #ccc;
+}
+
+.ez-view-ezconflistview .ezconf-list {
+    margin: 0;
+    width: 100%;
 }
