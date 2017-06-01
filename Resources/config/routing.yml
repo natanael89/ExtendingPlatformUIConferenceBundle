@@ -1,5 +1,6 @@
 list:
-    path:     /list/{offset}
-    defaults: { _controller: EzSystemsExtendingPlatformUIConferenceBundle:List:list, offset: 0 }
+    path:     /list/{offset}/{typeIdentifier}
+    defaults: { _controller: EzSystemsExtendingPlatformUIConferenceBundle:List:list, offset: 0, typeIdentifier: "" }
     requirements:
         offset: \d+
+        typeIdentifier: "[a-zA-Z_]+"

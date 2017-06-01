@@ -23,10 +23,14 @@ class ContentSearcher
         $this->offset = $offset;
     }
 
-    public function findContentItems()
+    public function findContentItems($typeIdentifier)
     {
         $query = new LocationQuery();
-        $query->query = new Criterion\Subtree('/1/');
+        if ($typeIdentifier) {
+            $query->query = new Criterion\ContentTypeIdentifier($typeIdentifier);
+        } else {
+            $query->query = new Criterion\Subtree('/1/');
+        }
         $query->offset = (int)$this->offset;
         $query->limit = self::LIMIT_PER_PAGE;
 
