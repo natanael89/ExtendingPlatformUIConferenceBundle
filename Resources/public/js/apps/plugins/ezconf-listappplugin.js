@@ -13,6 +13,7 @@ YUI.add('ezconf-listapplugin', function (Y) {
                 name: "eZConfList",
                 path: "/ezconf/list",
                 view: "ezconfListView",
+                service: Y.eZConf.ListViewService,
                 sideViews: {'navigationHub': true, 'discoveryBar': false},
                 callbacks: ['open', 'checkUser', 'handleSideViews', 'handleMainView']
             });
