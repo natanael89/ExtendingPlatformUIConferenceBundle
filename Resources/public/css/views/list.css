@@ -17,3 +17,26 @@
     margin: 0;
     width: 100%;
 }
+
+.ez-view-ezconflistview .ezconf-list-pagination {
+    padding: 0;
+    margin: 0.5em 0;
+    font-size: 90%;
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+}
+
+.ez-view-ezconflistview .ezconf-list-page {
+    width: 50%;
+}
+
+.ez-view-ezconflistview .ezconf-list-previous {
+    text-align: right;
+    margin-right: 1em;
+}
+
+.ez-view-ezconflistview .ezconf-list-next {
+    text-align: left;
+    margin-left: 1em;
+}
