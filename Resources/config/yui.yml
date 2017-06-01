@@ -12,3 +12,7 @@ system:
                 ezconflistview-ez-template:
                     type: 'template'
                     path: "%extending_platformui.public_dir%/templates/ezconflistview.hbt"
+                ezconf-navigationplugin:
+                    requires: ['ez-pluginregistry', 'ez-viewservicebaseplugin']
+                    dependencyOf: ['ez-navigationhubviewservice']
+                    path: "%extending_platformui.public_dir%/js/views/services/plugins/ezconf-navigationplugin.js"
