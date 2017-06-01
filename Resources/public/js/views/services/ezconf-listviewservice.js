@@ -12,7 +12,13 @@ YUI.add('ezconf-listviewservice', function (Y) {
         },
 
         _load: function (callback) {
-            var uri = this.get('app').get('apiRoot') + 'list';
+            var offset = this.get('request').params.offset,
+                uri;
+
+            if ( !offset ) {
+                offset = 0;
+            }
+            uri = this.get('app').get('apiRoot') + 'list/' + offset;
 
             Y.io(uri, {
                 method: 'GET',
