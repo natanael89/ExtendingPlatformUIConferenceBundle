@@ -2,20 +2,22 @@
 
 namespace EzSystems\ExtendingPlatformUIConferenceBundle\Controller;
 
-use eZ\Publish\API\Repository\Values\Content\LocationQuery;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion;
 use EzSystems\PlatformUIBundle\Controller\Controller as BaseController;
 
 class ListController extends BaseController
 {
     public function listAction($offset)
     {
-        $query = new LocationQuery();
-        $query->query = new Criterion\Subtree('/1/');
-        $query->offset = (int)$offset;
+        $contentSearcher = $this->get('ez_systems_extending_platform_uiconference.service.content_searcher');
+        $contentSearcher->setOffset($offset);
+        $results = $contentSearcher->findContentItems();
+        $previousIndex = $contentSearcher->calculatePreviousIndex();
+        $nextIndex = $contentSearcher->calculateNextIndex($results->totalCount);
 
         return $this->render('EzSystemsExtendingPlatformUIConferenceBundle:List:list.html.twig', [
-            'results' => $this->get('ezpublish.api.service.search')->findLocations($query),
+            'results' => $results,
+            'previous' => $previousIndex,
+            'next' => $nextIndex
         ]);
     }
 }

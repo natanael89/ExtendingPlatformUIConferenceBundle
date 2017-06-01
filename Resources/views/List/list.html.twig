@@ -7,6 +7,8 @@
 {% block content %}
     <h2>{{ results.totalCount }} content items</h2>
 
+    {{ include('EzSystemsExtendingPlatformUIConferenceBundle:List:list_pagination.html.twig') }}
+
     {% if results.searchHits %}
         <table class="ezconf-list pure-table pure-table-striped">
             <thead>
@@ -33,6 +35,8 @@
             </tbody>
         </table>
     {% endif %}
+
+    {{ include('EzSystemsExtendingPlatformUIConferenceBundle:List:list_pagination.html.twig') }}
 {% endblock %}
 
 {% block title %}List{% endblock %}

@@ -1,4 +1,4 @@
 services:
-#    ez_systems_extending_platform_ui_conference.example:
-#        class: EzSystems\ExtendingPlatformUIConferenceBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    ez_systems_extending_platform_uiconference.service.content_searcher:
+        class: EzSystems\ExtendingPlatformUIConferenceBundle\Service\ContentSearcher
+        arguments: ["@ezpublish.api.service.search"]
