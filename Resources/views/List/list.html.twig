@@ -1,0 +1,34 @@
+{% extends "eZPlatformUIBundle::pjax_admin.html.twig" %}
+
+{% block header_title %}
+    <h1 class="ezconf-list-title">Content list</h1>
+{% endblock %}
+
+{% block content %}
+    <h2>{{ results.totalCount }} content items</h2>
+
+    {% if results.searchHits %}
+        <table class="ezconf-list pure-table pure-table-striped">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Modified</th>
+                <th>Published</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for value in results.searchHits %}
+                <tr>
+                    <td>
+                        <a href="">{{ value.valueObject.contentInfo.name }}</a>
+                    </td>
+                    <td>{{ value.valueObject.contentInfo.modificationDate|localizeddate( 'short', 'medium' ) }}</td>
+                    <td>{{ value.valueObject.contentInfo.publishedDate|localizeddate( 'short', 'medium' ) }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}
+
+{% block title %}List{% endblock %}
